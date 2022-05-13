@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 
 import {styles} from './styles';
 
-const Information = ({navigation}) => {
+const Information = ({navigation, route}) => {
   const pageHome = () => {
     navigation.navigate('Home');
   };
+
+  useEffect(() => {
+    console.log(route.params);
+  }, []);
 
   return (
     <View style={styles.container}>

@@ -1,9 +1,9 @@
 import React from 'react';
-import {View, Text, StatusBar, Image, TouchableOpacity} from 'react-native';
+import { View, Text, StatusBar, Image, TouchableOpacity } from 'react-native';
 
-import {styles} from './styles';
+import { styles } from './styles';
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
   const pageInformation = () => {
     navigation.navigate('Information');
   };
@@ -22,7 +22,8 @@ const Home = ({navigation}) => {
       <TouchableOpacity
         onPress={() => pageInformation()}
         activeOpacity={0.4}
-        style={styles.qrCodeButton}>
+        style={styles.qrCodeButton}
+      >
         <Text style={styles.qrCodeButtonText}>Ler QRCODE</Text>
       </TouchableOpacity>
     </View>

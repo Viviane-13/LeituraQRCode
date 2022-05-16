@@ -8,9 +8,7 @@ const Information = ({navigation, route}) => {
     navigation.navigate('Home');
   };
 
-  useEffect(() => {
-    console.log(route.params);
-  }, []);
+  let dadosLeitura = JSON.parse(route.params.leitura);
 
   return (
     <View style={styles.container}>
@@ -25,22 +23,22 @@ const Information = ({navigation, route}) => {
       <View style={styles.imageContainer}>
         <Image
           resizeMode="contain"
-          source={require('../../assets/dog1.jpg')}
+          source={{uri: dadosLeitura.image}}
           style={styles.imagePet}
         />
       </View>
       <View style={styles.containerInfo}>
         <View style={styles.viewInfo}>
           <Text style={styles.infoTitle}>Nome:</Text>
-          <Text style={styles.infoResponse}>Spike</Text>
+          <Text style={styles.infoResponse}>{dadosLeitura.name}</Text>
         </View>
         <View style={styles.viewInfo}>
           <Text style={styles.infoTitle}>Data Nascimento:</Text>
-          <Text style={styles.infoResponse}>11/05/2021</Text>
+          <Text style={styles.infoResponse}>{dadosLeitura.dtNasc}</Text>
         </View>
         <View style={styles.viewInfo}>
           <Text style={styles.infoTitle}>Tutor:</Text>
-          <Text style={styles.infoResponse}>Pedro Souza</Text>
+          <Text style={styles.infoResponse}>{dadosLeitura.tutor}</Text>
         </View>
       </View>
       <View style={styles.nameLogo}>

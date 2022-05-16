@@ -12,12 +12,8 @@ export default function Camera({navigation}) {
   const onReadQR = value => {
     let dadosLeitura = value.data;
 
-    console.log('Dados Leitura: ', dadosLeitura, typeof dadosLeitura);
-
     navigation.navigate('Information', {
-      leituraObject: {
-        leitura: dadosLeitura,
-      },
+      leitura: dadosLeitura,
     });
   };
 
